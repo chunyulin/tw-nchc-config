@@ -1,0 +1,17 @@
+# MultiMap plugin (multimap) configuration
+# ========================================
+# documentation: https://www.dcache.org/old/manuals/Book-8.2/config-gplazma.shtml#multimap-plugin-multimap
+# location: gplazma.multimap.file=/etc/dcache/multi-mapfile.unmapped
+# gplazma: map sufficient multimap gplazma.multimap.file=/etc/dcache/multi-mapfile.unmapped
+#
+# mapping sources:
+#   group:*_vorole comes from vorolemap plugin configuration (disabled / deprecated)
+#   group:*_oidc comes from gplazma.scitoken.issuer configuration
+#
+
+
+fqan:/cms                      uid:1000 gid:1000,true username:cms
+fqan:/dteam                    uid:2000 gid:2000,true username:dteam
+fqan:/enmr.eu                  uid:3000 gid:3000,true username:enmr
+fqan:/ops                      uid:4000 gid:4000,true username:ops
+fqan:/vo.neugrid.eu            uid:5000 gid:5000,true username:neugrid

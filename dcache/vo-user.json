@@ -1,0 +1,42 @@
+[
+  {
+    "fqan": "/cms",
+    "mapped_gid": 1000,
+    "mapped_uname": "cms"
+  },
+  {
+    "fqan": "/cms/Role=production",
+    "mapped_gid": 1001,
+    "mapped_uname": "cms_production"
+  },
+  {
+    "fqan": "/cms/becms",
+    "mapped_gid": 1002,
+    "mapped_uname": "cms_becms"
+  },
+  {
+    "fqan": "/cms/dcms",
+    "mapped_gid": 1003,
+    "mapped_uname": "cms_dcms"
+  },
+  {
+    "fqan": "/dteam",
+    "mapped_gid": 2000,
+    "mapped_uname": "dteam"
+  },
+  {
+    "fqan": "/enmr.eu",
+    "mapped_gid": 3000,
+    "mapped_uname": "enmr"
+  },
+  {
+    "fqan": "/ops",
+    "mapped_gid": 4000,
+    "mapped_uname": "ops"
+  },
+  {
+    "fqan": "/vo.neugrid.eu",
+    "mapped_gid": 5000,
+    "mapped_uname": "neugrid"
+  }
+]

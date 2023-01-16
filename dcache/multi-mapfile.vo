@@ -1,0 +1,38 @@
+# MultiMap plugin (multimap) configuration
+# ========================================
+# documentation: https://www.dcache.org/old/manuals/Book-8.2/config-gplazma.shtml#multimap-plugin-multimap
+# location: gplazma.multimap.file=/etc/dcache/multi-mapfile.vo
+# gplazma: map sufficient multimap gplazma.multimap.file=/etc/dcache/multi-mapfile.vo
+#
+# mapping sources:
+#   group:*_vorole comes from vorolemap plugin configuration (disabled / deprecated)
+#   group:*_oidc comes from gplazma.scitoken.issuer configuration
+#
+# example for DTEAM:
+#fqan:/dteam                    uid:1000 username:dteam
+#username:dteam_oidc            uid:1001
+
+# generated from imported config file
+
+# CMS mapping of username resolved by vogroup plugin to uid
+username:cms                   uid:1000
+username:cms_oidc              uid:1000
+username:cms_production        uid:1001
+username:cms_becms             uid:1002
+username:cms_dcms              uid:1003
+
+# DTEAM mapping of username resolved by vogroup plugin to uid
+username:dteam                 uid:2000
+username:dteam_oidc            uid:2000
+
+# ENMR.EU mapping of username resolved by vogroup plugin to uid
+username:enmr               uid:3000
+username:enmr_oidc          uid:3000
+
+# OPS mapping of username resolved by vogroup plugin to uid
+username:ops                   uid:4000
+username:ops_oidc              uid:4000
+
+# VO.NEUGRID.EU mapping of username resolved by vogroup plugin to uid
+username:neugrid         uid:5000
+username:neugrid_oidc    uid:5000
