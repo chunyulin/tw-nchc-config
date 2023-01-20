@@ -1,0 +1,21 @@
+<storage-mapping>
+
+  <lfn-to-pfn protocol="direct" path-match=".*/LoadTest07_TW_NCHC_(.*)_.*_.*"
+                                result="/dpm/grid.nchc.org.tw/home/cms/LoadTest07/LoadTest07_TW_NCHC_$1"/>
+  <lfn-to-pfn protocol="direct" path-match="/+store/(.*)" result="/dpm/grid.nchc.org.tw/home/cms/store/$1"/>
+  <lfn-to-pfn protocol="srmv2" chain="direct" path-match="(.*)" result="srm://se01.grid.nchc.org.tw:8446/srm/managerv2?SFN=$1"/>
+  <lfn-to-pfn protocol="davs"  chain="direct" path-match="(.*)" result="davs://se01.grid.nchc.org.tw:443/$1"/>
+
+  <!--producion-->
+  <lfn-to-pfn protocol="xrootd"   path-match="/+store/(.*)" result="root://se01.grid.nchc.org.tw//cms/store/$1"/>
+  <lfn-to-pfn protocol="fallback" path-match="/+store/(.*)" result="root://xrootd-cms.infn.it//store/$1"/>
+
+  <!--Local rule for Xroot AAA-->
+  <lfn-to-pfn protocol="aaa" path-match="/+store/test/xrootd/T2_TW_NCHC/+store/(.*)" result="/dpm/grid.nchc.org.tw/home/cms/store/$1"/>
+  <lfn-to-pfn protocol="aaa" path-match="/+store/(.*)"                               result="/dpm/grid.nchc.org.tw/home/cms/store/$1"/>
+
+  <pfn-to-lfn protocol="direct"  path-match="/dpm/grid.nchc.org.tw/home/cms/(.*)" result="/$1"/>
+  <pfn-to-lfn protocol="srmv2" chain="direct" path-match="^srm://.*\?SFN=(.*)" result="$1"/>
+  <pfn-to-lfn protocol="davs"  chain="direct" path-match="^davs://.*/(/.*)"    result="$1"/>
+
+</storage-mapping>
