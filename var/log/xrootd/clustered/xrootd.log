@@ -1,0 +1,123 @@
+230120 18:02:21 12747 Starting on Linux 3.10.0-1160.81.1.el7.x86_64
+230120 18:02:21 12747 /usr/bin/xrootd -l /var/log/xrootd/xrootd.log -c /etc/xrootd/xrootd-clustered.cfg -k fifo -s /run/xrootd/xrootd-clustered.pid -n clustered
+Copr.  2004-2012 Stanford University, xrd version v5.5.1
+++++++ xrootd clustered@se01.grid.nchc.org.tw initialization started.
+Config using configuration file /etc/xrootd/xrootd-clustered.cfg
+=====> xrd.port 1095
+=====> all.sitename T2_TW_NCHC
+=====> all.adminpath /var/run/xrootd
+=====> all.pidpath /var/run/xrootd
+=====> xrd.trace conn
+=====> xrd.report xrootd.t2.ucsd.edu:9931 every 60s all sync
+Config maximum number of connections restricted to 65536
+Copr.  2012 Stanford University, xroot protocol 5.1.0 version v5.5.1
+++++++ xroot protocol initialization started.
+=====> xrootd.redirect se01.grid.nchc.org.tw:1094 /
+=====> all.export / nostage
+=====> xrootd.trace emsg login stall redirect
+=====> xrootd.seclib /usr/lib64/libXrdSec.so
+=====> xrootd.monitor all fstat 60s lfn ops ssq xfr 5 ident 5m dest fstat info user CMS-AAA-EU-COLLECTOR.cern.ch:9330
+Config exporting /
+Plugin loaded secprot v5.5.1 from seclib /usr/lib64/libXrdSec-5.so
+++++++ Authentication system initialization started.
+Plugin loaded secgsi v5.5.1 from sec.protocol /usr/lib64/libXrdSecgsi-5.so
+Secgsi -------------------------------------------------------------------
+Secgsi Mode: server
+Secgsi Debug: -1
+Secgsi CA dir: /etc/grid-security/certificates/
+Secgsi CA verification level: verify
+Secgsi CRL dir: /etc/grid-security/certificates/
+Secgsi CRL extension: .r0
+Secgsi CRL check level: require
+Secgsi CRL refresh time: 86400
+Secgsi Certificate: /etc/grid-security/xrootd/hostcert.pem
+Secgsi Key: /etc/grid-security/xrootd/hostkey.pem
+Secgsi Proxy delegation option: ignore
+Secgsi GRIDmap file: /etc/grid-security/grid-mapfile
+Secgsi GRIDmap option: nomap,usedn
+Secgsi GRIDmap cache entries expiration (secs): 600
+Secgsi VOMS option: extract
+Secgsi VOMS extraction function: /usr/lib64/libXrdSecgsiVOMS.so
+Secgsi MonInfo option: 0
+Secgsi Crypto modules: ssl
+Secgsi Ciphers: aes-128-cbc:bf-cbc:des-ede3-cbc
+Secgsi MDigests: sha256:sha1
+Secgsi Untrusting DNS for hostname checking
+Secgsi -------------------------------------------------------------------
+230120 18:02:23 12747 secgsi_LoadVOMSFun: using 'XrdSecgsiVOMSFun()' from /usr/lib64/libXrdSecgsiVOMS.so
+=====> sec.protocol /usr/lib64 gsi -crl:3 -key:/etc/grid-security/xrootd/hostkey.pem -cert:/etc/grid-security/xrootd/hostcert.pem -md:sha256:sha1 -ca:2 -gmapopt:10 -vomsfun:/usr/lib64/libXrdSecgsiVOMS.so
+Plugin loaded secunix v5.5.1 from sec.protocol /usr/lib64/libXrdSecunix-5.so
+=====> sec.protocol /usr/lib64 unix
+Config 2 authentication directives processed in /etc/xrootd/xrootd-clustered.cfg
+------ Authentication system initialization completed.
+++++++ Protection system initialization started.
+Config warning: Security level is set to none; request protection disabled!
+Config Local  protection level: none
+Config Remote protection level: none
+------ Protection system initialization completed.
+Config Routing for se01.grid.nchc.org.tw: local pub4 prv4
+Config Route all4: se01.grid.nchc.org.tw Dest=[::140.110.122.105]:1095
+++++++ File system initialization started.
+=====> all.role server
+=====> ofs.trace all
+=====> ofs.forward all
+++++++ Storage system initialization started.
+=====> oss.localroot /dpm/grid.nchc.org.tw/home/cms
+=====> all.export / nostage
+=====> oss.namelib /usr/lib64/libXrdCmsTfc.so file:/etc/dcache/storage.xml?protocol=aaa
+Plugin namelib /usr/lib64/libXrdCmsTfc-5.so not found; falling back to using /usr/lib64/libXrdCmsTfc.so
+Plugin loaded unversioned XrdOucgetName2Name from namelib /usr/lib64/libXrdCmsTfc.so
+Copr. 2009 University of Nebraska-Lincoln TFC plugin v 1.0
+Params: file:/etc/dcache/storage.xml?protocol=aaa
+Xerces-c has been initialized.
+Connecting to the catalog file:/etc/dcache/storage.xml?protocol=aaa
+Using catalog file /etc/dcache/storage.xml
+No lfn2pfn mapping for /
+No lfn2pfn mapping for /
+No lfn2pfn mapping for /
+Config effective /etc/xrootd/xrootd-clustered.cfg oss configuration:
+       oss.alloc        0 0 0
+       oss.spacescan    600
+       oss.fdlimit      32768 65536
+       oss.maxsize      0
+       oss.namelib /usr/lib64/libXrdCmsTfc.so
+       oss.localroot /dpm/grid.nchc.org.tw/home/cms
+       oss.trace        0
+       oss.xfr          1 deny 10800 keep 1200
+       oss.memfile off  max 67530459136
+       oss.defaults  r/w nocheck nodread nomig nopurge norcreate nostage
+       oss.path / r/w nocheck nodread nomig nopurge norcreate nostage
+------ Storage system initialization completed.
+++++++ Configuring server role. . .
+Config Manager xrootd-cms.infn.it -> xrootd-cms-redir-int.cr.cnaf.infn.it
+Config Manager                       131.154.128.232
+Config Manager xrootd-cms.infn.it -> xrootd-redic.pi.infn.it
+Config Manager                       193.205.76.83
+Config Manager xrootd-cms.infn.it -> xrootd.ba.infn.it
+Config Manager                       90.147.66.75
+Config Manager xrootd-cms.infn.it -> llrxrd-redir.in2p3.fr
+Config Manager                       134.158.132.31
+=====> all.manager any xrootd-cms.infn.it+ 1213
+=====> all.adminpath /var/run/xrootd
+=====> cms.trace all
+Config Global System Identification: s-clustered@se01.grid.nchc.org.tw 1213xrootd-redic.pi1213xrootd-cms-redir-int.cr.cnaf1213llrxrd-redir.in2p3.fr1213xrootd.ba.infn.it
+Config warning: forwarding turned off; authorization not enabled
+++++++ Checkpoint initialization started.
+++++++ Checkpoint initialization completed.
+Config effective /etc/xrootd/xrootd-clustered.cfg ofs configuration:
+       all.role server
+       ofs.maxdelay   60
+       ofs.persist    manual hold 600 logdir /var/run/xrootd/clustered/.ofs/posc.log
+       ofs.trace      ffff
+------ File system server initialization completed.
+Config asynchronous I/O has been disabled!
+Config redirect static / to se01.grid.nchc.org.tw:1094
+230120 18:02:24 12747  ofs_FAttr: FAttr req=info
+------ xroot protocol initialization completed.
+------ xrootd clustered@se01.grid.nchc.org.tw:1095 initialization completed.
+230120 18:03:24 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
+230120 18:04:34 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
+230120 18:05:44 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
+230120 18:06:54 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
+230120 18:08:04 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
+230120 18:09:14 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
