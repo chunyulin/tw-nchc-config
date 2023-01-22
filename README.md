@@ -32,3 +32,4 @@ systemctl start cmsd@clusterd
 # gfal-copy root://se01.grid.nchc.org.tw//store/test/xrootd/T2_TW_NCHC/store/temp/x /tmp/x -f    ## Works.
 # gfal-ls   root://cms-xrd-global.cern.ch//store/test/xrootd/T2_TW_NCHC/store/temp/x             ## Not work yet !
 ```
+See [this issue](https://github.com/chunyulin/tw-nchc-config/issues/1).
