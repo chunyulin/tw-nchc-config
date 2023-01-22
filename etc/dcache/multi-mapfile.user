@@ -9,12 +9,10 @@
 #   group:*_oidc comes from gplazma.scitoken.issuer configuration
 #
 # example - individual mapping for local users:
-#oidc:b0096aea-4eda-4d58-89bc-4c1880e78cb8@atlas uid:10000
 #oidc:58280cfd-ed7f-4954-90c7-cfde610cb963@wlcg uid:10000
 #"dn:/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vokac/CN=610071/CN=Petr Vokac" username:vokac uid:10000
-#"dn:/DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Petr Vokac 252509" username:vokac uid:10000
 
 
-## Chun-Yu Lin
+## Site admin
 #oidc:7a196f7e-6f0e-494c-80dd-f70e80292be4@wlcg   uid:10000
-#"dn:/C=TW/O=NCHC/OU=GRID/CN=Chun-Yu Lin 479225"  username:lincy uid:10000
+"dn:/C=TW/O=NCHC/OU=GRID/CN=Chun-Yu Lin 479225"  username:admin uid:0 gid:0

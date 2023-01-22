@@ -1,5 +1,5 @@
-230120 18:02:21 12747 Starting on Linux 3.10.0-1160.81.1.el7.x86_64
-230120 18:02:21 12747 /usr/bin/xrootd -l /var/log/xrootd/xrootd.log -c /etc/xrootd/xrootd-clustered.cfg -k fifo -s /run/xrootd/xrootd-clustered.pid -n clustered
+230122 11:54:14 741 Starting on Linux 3.10.0-1160.81.1.el7.x86_64
+230122 11:54:14 741 /usr/bin/xrootd -l /var/log/xrootd/xrootd.log -c /etc/xrootd/xrootd-clustered.cfg -k fifo -s /run/xrootd/xrootd-clustered.pid -n clustered
 Copr.  2004-2012 Stanford University, xrd version v5.5.1
 ++++++ xrootd clustered@se01.grid.nchc.org.tw initialization started.
 Config using configuration file /etc/xrootd/xrootd-clustered.cfg
@@ -44,7 +44,7 @@ Secgsi Ciphers: aes-128-cbc:bf-cbc:des-ede3-cbc
 Secgsi MDigests: sha256:sha1
 Secgsi Untrusting DNS for hostname checking
 Secgsi -------------------------------------------------------------------
-230120 18:02:23 12747 secgsi_LoadVOMSFun: using 'XrdSecgsiVOMSFun()' from /usr/lib64/libXrdSecgsiVOMS.so
+230122 11:54:19 741 secgsi_LoadVOMSFun: using 'XrdSecgsiVOMSFun()' from /usr/lib64/libXrdSecgsiVOMS.so
 =====> sec.protocol /usr/lib64 gsi -crl:3 -key:/etc/grid-security/xrootd/hostkey.pem -cert:/etc/grid-security/xrootd/hostcert.pem -md:sha256:sha1 -ca:2 -gmapopt:10 -vomsfun:/usr/lib64/libXrdSecgsiVOMS.so
 Plugin loaded secunix v5.5.1 from sec.protocol /usr/lib64/libXrdSecunix-5.so
 =====> sec.protocol /usr/lib64 unix
@@ -55,16 +55,15 @@ Config warning: Security level is set to none; request protection disabled!
 Config Local  protection level: none
 Config Remote protection level: none
 ------ Protection system initialization completed.
-Config Routing for se01.grid.nchc.org.tw: local pub4 prv4
+Config Routing for se01.grid.nchc.org.tw: local pub4 prv4 
 Config Route all4: se01.grid.nchc.org.tw Dest=[::140.110.122.105]:1095
 ++++++ File system initialization started.
 =====> all.role server
 =====> ofs.trace all
 =====> ofs.forward all
 ++++++ Storage system initialization started.
-=====> oss.localroot /dpm/grid.nchc.org.tw/home/cms
 =====> all.export / nostage
-=====> oss.namelib /usr/lib64/libXrdCmsTfc.so file:/etc/dcache/storage.xml?protocol=aaa
+=====> oss.namelib /usr/lib64/libXrdCmsTfc.so file:/etc/dcache/storage.xml?protocol=aaa 
 Plugin namelib /usr/lib64/libXrdCmsTfc-5.so not found; falling back to using /usr/lib64/libXrdCmsTfc.so
 Plugin loaded unversioned XrdOucgetName2Name from namelib /usr/lib64/libXrdCmsTfc.so
 Copr. 2009 University of Nebraska-Lincoln TFC plugin v 1.0
@@ -81,7 +80,6 @@ Config effective /etc/xrootd/xrootd-clustered.cfg oss configuration:
        oss.fdlimit      32768 65536
        oss.maxsize      0
        oss.namelib /usr/lib64/libXrdCmsTfc.so
-       oss.localroot /dpm/grid.nchc.org.tw/home/cms
        oss.trace        0
        oss.xfr          1 deny 10800 keep 1200
        oss.memfile off  max 67530459136
@@ -89,14 +87,14 @@ Config effective /etc/xrootd/xrootd-clustered.cfg oss configuration:
        oss.path / r/w nocheck nodread nomig nopurge norcreate nostage
 ------ Storage system initialization completed.
 ++++++ Configuring server role. . .
-Config Manager xrootd-cms.infn.it -> xrootd-cms-redir-int.cr.cnaf.infn.it
-Config Manager                       131.154.128.232
-Config Manager xrootd-cms.infn.it -> xrootd-redic.pi.infn.it
-Config Manager                       193.205.76.83
-Config Manager xrootd-cms.infn.it -> xrootd.ba.infn.it
-Config Manager                       90.147.66.75
 Config Manager xrootd-cms.infn.it -> llrxrd-redir.in2p3.fr
 Config Manager                       134.158.132.31
+Config Manager xrootd-cms.infn.it -> xrootd-redic.pi.infn.it
+Config Manager                       193.205.76.83
+Config Manager xrootd-cms.infn.it -> xrootd-cms-redir-int.cr.cnaf.infn.it
+Config Manager                       131.154.128.232
+Config Manager xrootd-cms.infn.it -> xrootd.ba.infn.it
+Config Manager                       90.147.66.75
 =====> all.manager any xrootd-cms.infn.it+ 1213
 =====> all.adminpath /var/run/xrootd
 =====> cms.trace all
@@ -104,6 +102,7 @@ Config Global System Identification: s-clustered@se01.grid.nchc.org.tw 1213xroot
 Config warning: forwarding turned off; authorization not enabled
 ++++++ Checkpoint initialization started.
 ++++++ Checkpoint initialization completed.
+230122 11:54:19 782 cms_Finder: Connected to cmsd via /var/run/xrootd/clustered/.olb/olbd.admin
 Config effective /etc/xrootd/xrootd-clustered.cfg ofs configuration:
        all.role server
        ofs.maxdelay   60
@@ -112,12 +111,6 @@ Config effective /etc/xrootd/xrootd-clustered.cfg ofs configuration:
 ------ File system server initialization completed.
 Config asynchronous I/O has been disabled!
 Config redirect static / to se01.grid.nchc.org.tw:1094
-230120 18:02:24 12747  ofs_FAttr: FAttr req=info
+230122 11:54:19 741  ofs_FAttr: FAttr req=info
 ------ xroot protocol initialization completed.
 ------ xrootd clustered@se01.grid.nchc.org.tw:1095 initialization completed.
-230120 18:03:24 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
-230120 18:04:34 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
-230120 18:05:44 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
-230120 18:06:54 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
-230120 18:08:04 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
-230120 18:09:14 12786 cms_Finder: Waiting for cms path /var/run/xrootd/clustered/.olb/olbd.admin
