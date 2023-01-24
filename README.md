@@ -48,10 +48,11 @@ Any direct access thru dCache's xrootd door (call it `A`) at standard 1094 port 
 ```
 $ gfal-copy -f root://se01.grid.nchc.org.tw//store/test/xrootd/T2_TW_NCHC/store/user/chunyu/x /dev/null
 ```
-My issue is the correct "federation host" as mentioned in the twiki, which is the stand-along (SLAC) xrootd server running `cmsd` (subscribe to regional redirector) and another `xrootd` (call it `B`). 
-I guess `B` is similar to `A` but only for returning namespace results to `cmsd`, instead of for actual data transferring. 
-Now, my `B` is inactive so far, maybe due to the LCMAPS setting.
-So although the dCache's namespace was mounted via NFS in`/pnfs`, the `B`-xrootd cannot see it yet, such as:
+My issue is the correct "federation host", which is the standalone (SLAC) xrootd server running `cmsd` (subscribe to regional redirector) and another `xrootd` (call it `B`).
+
+I guess `B` is similar to `A` but only for returning namespace results to `cmsd`, instead of for actual data transferring.
+
+Now, my `B` is keeping to restart itself w/o success, maybe due to the LCMAPS setting.
 ```
 $ gfal-ls root://se01.grid.nchc.org.tw:11001//store  ## NOT works!
 ```
