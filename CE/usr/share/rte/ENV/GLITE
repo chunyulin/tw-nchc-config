@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#### Or copy and paste from ENV/PROXY and undefault ENV/PROXY.
+
+if [ "x$1" = "x0" ]; then       ## Before LRMS
+
+    ## SE related
+    export DPM_HOST=se01.grid.nchc.org.tw
+    export DPNS_HOST=se01.grid.nchc.org.tw
+    export LCG_GFAL_INFOSYS="bdii.grid.sinica.edu.tw:2170,lcg-bdii.cern.ch:2170"
+    export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch
+    ## for the UUGS ticket https://ggus.eu/index.php?mode=ticket_info&ticket_id=140913
+    export GLOBUS_LOCATION=/
+
+    # get VO
+    #localfile=${joboption_controldir}/job.${joboption_gridid}.local
+    #vo=`grep voms= $localfile | awk -F / '{print $2}'|sort -u`
+    #if [ "x$vo" = "xcms" ] ; then
+    #    export concurrency_limits = "ARC"
+    #fi
+
+fi

@@ -1,0 +1,5 @@
+<storage-mapping>
+  <!--Local rule for Xroot AAA-->
+  <lfn-to-pfn protocol="aaa" path-match="/+store/test/xrootd/T2_TW_NCHC/+store/(.*)" result="/pnfs/cms/store/$1"/>
+  <lfn-to-pfn protocol="aaa" path-match="/+store/(.*)"                               result="/pnfs/cms/store/$1"/>
+</storage-mapping>

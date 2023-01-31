@@ -1,0 +1,12 @@
+#!/bin/bash
+export PDSH_SSH_ARGS_APPEND="-o StrictHostKeyChecking=no"
+
+MACH="wn[01-37]"
+
+#pdsh -w ${MACH} "wget -O /etc/yum.repos.d/beegfs_rhel7.repo https://www.beegfs.io/release/latest-stable/dists/beegfs-rhel7.repo;mkdir -p /mnt/nchc;yum -y install beegfs-client beegfs-helperd beegfs-utils"
+#pdsh -w ${MACH} "echo '/mnt/nchc /etc/beegfs/beegfs-client.conf' > /etc/beegfs/beegfs-mounts.conf"
+#pdsh -w ${MACH} 'sed -i "s/^sysMgmtdHost .*/sysMgmtdHost = 140.110.136.146/" /etc/beegfs/beegfs-client.conf'
+pdsh -w ${MACH} 'systemctl restart beegfs-client'
+#;systemctl start beegfs-client'
+
+

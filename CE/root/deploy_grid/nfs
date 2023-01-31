@@ -1,0 +1,12 @@
+#!/bin/bash
+export PDSH_SSH_ARGS_APPEND="-o StrictHostKeyChecking=no"
+
+NFS="wn[26,628]"
+NFS="wn[01-37,39],wn6[01,11,20-33,35-38]"
+
+#pdsh -w ${NFS} "chown .cms /nfs -R"
+#pdsh -w ${NFS} "mkdir -p /nfs; chown .cms /nfs -R; mount 10.200.6.40:/nfs /nfs"
+
+#pdsh -w ${NFS} "umount /nfs -f"
+pdsh -w ${NFS} "mkdir -p /nfs; mount 10.200.6.40:/nfs /nfs"
+

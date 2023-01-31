@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo
+echo "#### Local 10G"
+for i in {21..37}; do
+   ST=`ipmitool -H 10.0.7.${i} -Uadmin -Padmin chassis power status`
+   echo "wn${i#0}:" ${ST}
+done
+
+
+

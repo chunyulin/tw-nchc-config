@@ -1,0 +1,15 @@
+#!/bin/bash
+export PDSH_SSH_ARGS_APPEND="-o StrictHostKeyChecking=no"
+
+#wn07: CERN OS
+MACH="wn[01-10],wn[37-38,40]"  ## exclude fore
+MACH="wn[01-11,14-17],wn[37,40]"
+
+pdcp -r -w ${MACH} /install.old/wn_f5/etc/condor  /etc/
+pdsh -w ${MACH} service condor restart
+
+
+#### CVMFS
+#pdsh -w ${MACH} "rm -rf /etc/cvmfs"
+#pdcp -r -w ${MACH} /install.old/wn_f5/etc/cvmfs /etc/
+#pdsh -w ${MACH} "cvmfs_config chksetup; cvmfs_config probe"

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+MACH="wn[02-04]"
+
+
+pdsh -w ${MACH} "yum -y install https://yum.puppet.com/puppet6-release-el-7.noarch.rpm; yum -y install puppet"
+pdcp -w ${MACH} /install.old/wn_f5/etc/puppetlabs/puppet/puppet.conf /etc/puppetlabs/puppet/
+pdsh -w ${MACH} 'sed -i "s/\(certname = \)\(.*\)/\1`hostname -f`/" /etc/puppetlabs/puppet/puppet.conf'
+pdsh -w ${MACH} "service puppet restart"

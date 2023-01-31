@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+## cat /proc/mdstat
+## mdadm -D /dev/md0
+
+
+
+for i in ${FAILNODE}; do
+  #ipmitool -H 10.0.7.${i} -Uadmin -Padmin chassis bootdev pxe
+  #ipmitool -H 10.0.7.${i} -Uadmin -Padmin power off
+  echo $i `ipmitool -H 10.0.7.${i} -Uadmin -Padmin power status`
+done

@@ -1,0 +1,34 @@
+#!/bin/bash
+BASE=/etc/grid-security/gridmapdir
+mkdir -p ${BASE}
+
+addvouser() {
+  groupadd $1 --gid $2
+  mkdir -p /home/grid/$1
+  for ((i=1;i<=$3;i++)); do
+     UNAME=$4`printf "%03d\n" $i`
+     ID="$[$2+$i]"
+     echo Add ${UNAME} ...
+     #userdel $1`printf "%03d\n" $i` -r
+     ##userdel ${UNAME} -r
+     useradd ${UNAME} --uid ${ID} --gid $2 --base-dir /home/grid/$1
+     touch ${BASE}/${UNAME}
+  done
+}
+
+addvouser cms      50000 100 cms
+addvouser cmspil   50200 10  pilcms
+addvouser cmsprd   50300 10  prdcms
+addvouser cmssgm   50400 10  sgmcms
+addvouser ops      51000 10  ops
+addvouser opssgm   51100 5   sgmops
+addvouser dteam    52000 5   dteam
+addvouser dteamsgm 52200 5   sgmdtm
+addvouser enmr          53000 5 enmr
+addvouser sgmenmr       53100 3 sgmenmr
+addvouser sgmenmrbcbr   53200 3 sgmenmrbcbr
+addvouser sgmenmrbmrz   53300 3 sgmenmrbmrz
+addvouser sgmenmrcirmmp 53400 3 sgmenmrcirmmp
+addvouser neugrid    54000 5 neugrid
+addvouser sgmneugrid 54100 3 sgmneugrid
+

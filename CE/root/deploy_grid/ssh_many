@@ -1,0 +1,8 @@
+#!/bin/bash
+HOSTS="10"
+
+
+for i in $(seq 1 9); do
+  condor_drain wn0${i}.grid.nchc.org.tw
+done
+

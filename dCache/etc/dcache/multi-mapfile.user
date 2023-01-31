@@ -15,4 +15,5 @@
 
 ## Site admin
 #oidc:7a196f7e-6f0e-494c-80dd-f70e80292be4@wlcg   uid:10000
-"dn:/C=TW/O=NCHC/OU=GRID/CN=Chun-Yu Lin 479225"  username:admin uid:0 gid:0
+##"dn:/C=TW/O=NCHC/OU=GRID/CN=Chun-Yu Lin 479225"  username:admin uid:0 gid:0
+##"dn:/C=TW/O=NCHC/OU=GRID/CN=Chun-Yu Lin 479225"  username:ops001 uid:1000 gid:1000
