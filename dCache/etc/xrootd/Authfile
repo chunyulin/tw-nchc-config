@@ -1,7 +1,6 @@
-## https://twiki.cern.ch/twiki/bin/view/Main/XRootDoverHTTP
-
+## https://twiki.cern.ch/twiki/bin/view/CMSPublic/XRootDoverHTTP
 t READALL / lr
+g /cms /cms lr
 
-g /cms /ops a READALL
-g /ops READALL
-g /dteam /dteam a READALL
+#g /ops /opt lr
+#g /dteam /dteam a READALL
