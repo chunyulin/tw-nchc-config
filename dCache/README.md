@@ -3,20 +3,21 @@
 ### Packages:
 ```
 # yum list installed | grep dcache
-dcache.noarch                         8.2.16-1                 @/dcache-8.2.16-1.noarch
+dcache.noarch                         9.2.19-1                 @/dcache-9.2.19-1.noarch
 dcache-plugin-xrootd-monitor.noarch   7.0.0-0                  @/dcache-plugin-xrootd-monitor-7.0.0-0.noarch
 
 # yum list installed | grep xrootd
 dcache-plugin-xrootd-monitor.noarch   7.0.0-0                  @/dcache-plugin-xrootd-monitor-7.0.0-0.noarch
-gfal2-plugin-xrootd.x86_64            2.21.3-1.el7             @epel
-xrootd.x86_64                         1:5.5.4-1.el7            @epel
-xrootd-client-libs.x86_64             1:5.5.4-1.el7            @epel
+gfal2-plugin-xrootd.x86_64            2.22.2-1.el7             @epel
+xrootd.x86_64                         1:5.6.9-1.el7            @epel
+xrootd-client-libs.x86_64             1:5.6.9-1.el7            @epel
 xrootd-cmstfc.x86_64                  1.5.2-6.osgup.el7        @/xrootd-cmstfc-1.5.2-6.osgup.el7.x86_64
-xrootd-libs.x86_64                    1:5.5.4-1.el7            @epel
-xrootd-selinux.noarch                 1:5.5.4-1.el7            @epel
-xrootd-server.x86_64                  1:5.5.4-1.el7            @epel
-xrootd-server-libs.x86_64             1:5.5.4-1.el7            @epel
-xrootd-voms.x86_64                    1:5.5.4-1.el7            @epel
+xrootd-libs.x86_64                    1:5.6.9-1.el7            @epel
+xrootd-scitokens.x86_64               1:5.6.9-1.el7            @epel
+xrootd-selinux.noarch                 1:5.6.9-1.el7            @epel
+xrootd-server.x86_64                  1:5.6.9-1.el7            @epel
+xrootd-server-libs.x86_64             1:5.6.9-1.el7            @epel
+xrootd-voms.x86_64                    1:5.6.9-1.el7            @epel
 xrootd4j-cms-plugin.noarch            4.0.4-1                  @/xrootd4j-cms-plugin-4.0.4-1.noarch
 ```
 
@@ -41,7 +42,7 @@ drwxr-xr-x   2      10000   10000  512 Apr 20 23:56 wlcg
 
 ### Start dCache and SLAC xrootd server:
 ```
-# systemctl start dcacge.target
+# systemctl start dcache.target
 # systemctl start xrootd@clusterd
 # systemctl start cmsd@clusterd
 ```
