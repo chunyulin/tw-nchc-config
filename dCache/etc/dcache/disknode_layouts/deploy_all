@@ -1,0 +1,7 @@
+## pdsh -w se02,disk[01-02],disk[3-4,6-8] systemctl stop dcache.target
+
+HOSTS="se02 disk01 disk02 disk3 disk4 disk6 disk7 disk8"
+
+for h in ${HOSTS}; do
+ scp layout-${h}.*.conf ${h}:/etc/dcache/layouts/
+done
