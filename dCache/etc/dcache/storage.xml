@@ -1,10 +1,5 @@
 <storage-mapping>
 
-  <lfn-to-pfn protocol="direct" path-match=".*/LoadTest07_TW_NCHC_(.*)_.*_.*"
-                                result="/cms/LoadTest07/LoadTest07_TW_NCHC_$1"/>
-  <lfn-to-pfn protocol="direct" path-match="/+store/(.*)" result="/cms/store/$1"/>
-  <lfn-to-pfn protocol="srmv2" chain="direct" path-match="(.*)" result="srm://se01.grid.nchc.org.tw:8446/srm/managerv2?SFN=$1"/>
-
   <!--producion-->
   <lfn-to-pfn protocol="davs"     path-match="/+store/(.*)" result="davs://se01.grid.nchc.org.tw//cms/store/$1"/>
   <lfn-to-pfn protocol="xrootd"   path-match="/+store/(.*)" result="root://se01.grid.nchc.org.tw//cms/store/$1"/>
