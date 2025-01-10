@@ -11,6 +11,5 @@
 
   <pfn-to-lfn protocol="davs"  path-match="^davs://.*/(.*)" result="/$1"/>
   <pfn-to-lfn protocol="direct"  path-match="/cms/(.*)" result="/$1"/>
-  <pfn-to-lfn protocol="srmv2" chain="direct" path-match="^srm://.*\?SFN=(.*)" result="$1"/>
 
 </storage-mapping>
