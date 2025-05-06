@@ -1,7 +1,7 @@
 <storage-mapping>
 
   <!--producion-->
-  <lfn-to-pfn protocol="davs"     path-match="/+store/(.*)" result="davs://se01.grid.nchc.org.tw//cms/store/$1"/>
+  <lfn-to-pfn protocol="davs"     path-match="/+store/(.*)" result="davs://se01.grid.nchc.org.tw:2880//cms/store/$1"/>
   <lfn-to-pfn protocol="xrootd"   path-match="/+store/(.*)" result="root://se01.grid.nchc.org.tw//cms/store/$1"/>
   <lfn-to-pfn protocol="fallback" path-match="/+store/(.*)" result="root://xrootd-cms.infn.it//store/$1"/>
 

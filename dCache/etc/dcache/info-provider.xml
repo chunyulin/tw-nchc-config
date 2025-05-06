@@ -38,7 +38,6 @@
         |        <list name="SRM-supported-VOs">
         |          <item>cms</item>
         |          <item>ops</item>
-        |          <item>dteam</item>
         |          <item>enmr.eu</item>
         |        </list>
         +-->
@@ -46,6 +45,7 @@
        <item>cms</item>
        <item>ops</item>
        <item>kagra</item>
+       <item>dteam</item>
        <item>enmr.eu</item>
     </list>
 
@@ -66,8 +66,6 @@
         +-->
     <list name="SRM-GlueServiceOwners">
         <item>NCHC</item>
-        <item>NARLabs</item>
-        <item>NSTC</item>
     </list>
 
 

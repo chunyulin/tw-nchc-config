@@ -1,4 +1,4 @@
-HOSTS="se02 disk01 disk02 disk3 disk4 disk6 disk7 disk8"
+HOSTS="se02 disk01 disk3 disk4 disk6 disk7 disk8"
 
 for h in ${HOSTS}; do
  scp ${h}:/etc/dcache/layouts/*.conf .
