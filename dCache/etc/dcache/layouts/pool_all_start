@@ -1,0 +1,6 @@
+export PDSH_RCMD_TYPE=ssh
+POOL="se02,disk01,disk[3-4,6-8],pool[6-8]"
+
+#POOL="disk[3-4,6-8],pool[6-8]"
+
+pdsh -w ${POOL} "rm -f /var/log/dcache/*; systemctl start dcache.target"

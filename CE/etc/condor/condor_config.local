@@ -1,0 +1,37 @@
+UID_DOMAIN = grid.nchc.org.tw
+TRUST_UID_DOMAIN = True
+SOFT_UID_DOMAIN = True
+
+CONDOR_IDS = 0.0
+
+SEC_DEFAULT_AUTHENTICATION_METHODS = IDTOKENS, FS, SCITOKENS
+CONDOR_HOST = ce01.grid.nchc.org.tw
+
+## === accept OSG jobs
+FLOCK_FROM = ui.grid.nchc.org.tw
+ALLOW_WRITE = 10.200.0.0/16, 10.10.0.0/16,  140.110.211.1/28, 140.110.9.1/24, 2001:e10:2000:211::1/64
+ALLOW_NEGOTIATOR = $(CONDOR_HOST), $(FLOCK_FROM)
+ALLOW_NEGOTIATOR_SCHEDD = $(COLLECTOR_HOST), $(FLOCK_FROM)
+ALLOW_WRITE_COLLECTOR = $(FLOCK_FROM)
+ALLOW_READ = $(ALLOW_READ)
+
+#############################################################
+DAEMON_LIST = COLLECTOR, MASTER, NEGOTIATOR, SCHEDD
+
+# schedd
+_NOT_USED__ARC_LIMIT = 10
+SYSTEM_PERIODIC_REMOVE = False
+
+# negotiator
+###NEGOTIATOR_PRE_JOB_RANK = (10000000 * My.Rank) + (1000000 * (RemoteOwner =?= UNDEFINED)) + (100000 * Cpus) + Memory
+NEGOTIATOR_PRE_JOB_RANK =    (100000 - LoadAvg) / Cpus + (10000 * My.Rank)
+##NEGOTIATOR_POST_JOB_RANK = (RemoteOwner =?= UNDEFINED) * (ifthenElse(isUndefined(KFlops), 1000, Kflops) - 1.0e10*(Offline=?=True))
+NEGOTIATOR_DEPTH_FIRST = False
+PREEMPTION_RANK = (RemoteUserPrio * 1000000) - ifThenElse(isUndefined(TotalJobRunTime), 0, TotalJobRunTime)
+
+
+### Debug
+#PER_JOB_HISTORY_DIR = /tmp/history
+#KEEP_POOL_HISTORY = True
+#POOL_HISTORY_DIR = /tmp/history
+STATISTICS_TO_PUBLISH = 2

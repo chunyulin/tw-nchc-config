@@ -28,11 +28,3 @@
 "/enmr.eu/*" enmr
 "/enmr.eu/Role=NULL/Capability=NULL" enmr
 "/enmr.eu" enmr
-"/vo.neugrid.eu/Role=sgmneugrid/Capability=NULL" sgmneugrid
-"/vo.neugrid.eu/Role=sgmneugrid" sgmneugrid
-"/vo.neugrid.eu/Role=nagios/Capability=NULL" neugrid
-"/vo.neugrid.eu/Role=nagios" neugrid
-"/vo.neugrid.eu/*/Role=NULL/Capability=NULL" neugrid
-"/vo.neugrid.eu/*" neugrid
-"/vo.neugrid.eu/Role=NULL/Capability=NULL" neugrid
-"/vo.neugrid.eu" neugrid

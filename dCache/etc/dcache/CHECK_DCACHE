@@ -1,0 +1,15 @@
+#!/bin/bash
+
+## dd if=/dev/zero of=/tmp/aaa.img bs=1M count=1024
+## voms-proxy-init --voms cms
+
+SRC=/tmp/aaa.img
+DAVS=davs://se01.grid.nchc.org.tw:2880
+XROOTD=root://se01.grid.nchc.org.tw
+FOO=/cms/store/mc/SAM/GenericTTbar/AODSIM/CMSSW_9_2_6_91X_mcRun1_realistic_v2-v1/00000
+
+gfal-ls ${DAVS}/${FOO}
+gfal-copy ${SRC} "${DAVS}/${FOO}/AAA" -f
+gfal-copy ${SRC} "${XROOTD}/${FOO}/AAA" -f
+gfal-rm "${DAVS}/${FOO}/AAA"
+

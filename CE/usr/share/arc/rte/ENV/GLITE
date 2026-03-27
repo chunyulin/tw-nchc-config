@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#### Or copy and paste from ENV/PROXY and undefault ENV/PROXY.
+
+## SE related
+export DPM_HOST=se01.grid.nchc.org.tw
+export DPNS_HOST=se01.grid.nchc.org.tw
+export LCG_GFAL_INFOSYS="bdii.grid.sinica.edu.tw:2170,lcg-bdii.cern.ch:2170"
+export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch
+export VO_ENMR_EU_SW_DIR=/cvmfs/wenmr.egi.eu
+
+## Condor
+###export RUNTIME_ENABLE_MULTICORE_SCRATCH=1  ## Seem to be a default since 2016...
+
+## for the UUGS ticket https://ggus.eu/index.php?mode=ticket_info&ticket_id=140913
+export GLOBUS_LOCATION=/

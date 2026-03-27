@@ -1,0 +1,28 @@
+UID_DOMAIN = grid.nchc.org.tw
+TRUST_UID_DOMAIN = True
+SOFT_UID_DOMAIN = True
+
+CONDOR_HOST = ce01.grid.nchc.org.tw
+DAEMON_LIST = MASTER, STARTD
+
+COUNT_HYPERTHREAD_CPUS=TRUE
+START = True
+
+NUM_SLOTS = 1
+NUM_SLOTS_TYPE_1 = 1
+##SLOT_TYPE_1  = cpus=180,mem=auto,disk=auto     ### AMD node
+SLOT_TYPE_1  = cpus=auto,mem=auto,disk=auto
+SLOT_TYPE_1_PARTITIONABLE = TRUE
+
+#MEMORY = ifThenElse( $(DETECTED_MEMORY) < 20480, 20480, $(DETECTED_MEMORY) )
+MEMORY = $(DETECTED_MEMORY)
+MAXJOBRETIREMENTTIME = 3600 * 24 * 3
+PREEMPT = False
+RANK = (Owner=="ops*")*1000 + (Owner=="sgm*")*1000 + (Owner=="lincy")*1000
+
+## Will make depth first if set to False
+CONSUMPTION_POLICY = True
+
+### Flocking from IGWN
+CCB_ADDRESS = $(CONDOR_HOST)
+ALLOW_WRITE = 140.110.211.1/28, 140.110.9.1/24
